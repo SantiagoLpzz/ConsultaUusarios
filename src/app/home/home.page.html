@@ -1,0 +1,32 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Consultas Usuarios
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Blank</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-input [(ngModel)]="nombre.value" label="Nombre"></ion-input>
+  <ion-input [(ngModel)]="apellido.value" label="Apellido"></ion-input>
+  <ion-input [(ngModel)]="correo.value" label="Correo"></ion-input>
+  
+  <button (click)="agregarUsuario()">
+    {{ editIndex === null ? 'Registrar Usuario' : 'Guardar Cambios' }}
+  </button>
+  
+  <br>
+  <div *ngFor="let user of usuario; let i = index">
+    <h2>{{user.nombre}}</h2>
+    <h2>{{user.apellido}}</h2>
+    <h2>{{user.correo}}</h2>
+    <button (click)="editarUsuario(i)">Editar Usuario</button>
+    <button (click)="eliminarUsuario(i)">Eliminar Usuario</button>
+  </div>
+</ion-content>

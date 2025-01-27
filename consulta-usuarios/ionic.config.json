@@ -1,0 +1,7 @@
+{
+  "name": "Consulta Usuarios",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
